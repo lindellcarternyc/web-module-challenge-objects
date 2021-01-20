@@ -51,10 +51,17 @@ export const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
-  /*Your code here*/
+  discount: function (discountType) {
+    if (['teacher', 'student'].includes(discountType)) {
+      return this.price * 0.75
+    }
+    return this.price * 0.9
+  }
 }
 
-
+console.log(burger.discount('teacher'))
+console.log(burger.discount('student'))
+console.log(burger.discount('public'))
 
 ///////////////Reviews (MVP)///////////////////
 const reviews = [
